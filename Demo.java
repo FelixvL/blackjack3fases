@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -9,6 +10,9 @@ public class Demo {
 }
 class BlackJack{
 	Scanner kaart = new Scanner(System.in); //2
+//	Kaart[] hand = new Kaart[10];
+	ArrayList<Kaart> kaartenInDeHand = new ArrayList();
+	
 	void starten() {//3
 		System.out.println("Welkom Bij BlackJack");
 		boolean doorgaan = true;
@@ -32,13 +36,24 @@ class BlackJack{
 			int[] kaartwaarden = {2, 3,  4,  5,  6,  7,  8,  9,  10,   10,    10,     10,    11};
 			int getal2 = r.nextInt(13);
 			Kaart kaart = new Kaart(kleuren[getal], waarden[getal2], kaartwaarden[getal2]);
-			kaart.toonKaart();
+			kaartenInDeHand.add(kaart);
 		}
 		toonHand();
 		return true;
 	}
 	void toonHand() {
-		System.out.println("DIT ZIJN JE KAARTEN");
+		System.out.println("Kaarten In De Hand:");
+		for(int x =0 ; x < kaartenInDeHand.size(); x++) {
+			kaartenInDeHand.get(x).toonKaart();
+			
+//			Kaart temp = kaartenInDeHand.get(x);
+//			temp.toonKaart();
+		}
+		
+//		for(Kaart deKaart : kaartenInDeHand) {
+//			deKaart.toonKaart();
+//		}
+		
 	}
 }
 
