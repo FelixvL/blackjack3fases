@@ -17,26 +17,22 @@ class BlackJack{
 		}
 	}
 	boolean kaartvragen() { //1
-		System.out.println("verder gaan (d)");
+		System.out.print("verder gaan (d) - ");
 		System.out.println("om te stoppen (q)");
 		String jouwkaart = kaart.nextLine();
-		System.out.println("jouw kaart : " + jouwkaart);
 		char dekeuze = jouwkaart.charAt(0);
-		System.out.println(dekeuze);
 		if (dekeuze == 'q') {
 			System.out.println("bedankt voor het spelen");
 			return false;
 		} else {
-			System.out.println("we gaan ervoor");
 			String[] kleuren = {"Harten","Klaver","Ruiten","Schoppen"};
 			Random r = new Random();
 			int getal = r.nextInt(4);
-			String[] waarden = {"2","3","4","5","6","7","8","9","10","B","V","H", "A"};
-			int[] kaartwaarden = {2, 3,  4,  5,  6,  7,  8,  9,  10, 10, 10, 10,10,11};
+			String[] waarden = {"2","3","4","5","6","7","8","9","10","Boer","Vrouw","Heer", "Aas"};
+			int[] kaartwaarden = {2, 3,  4,  5,  6,  7,  8,  9,  10,   10,    10,     10,    11};
 			int getal2 = r.nextInt(13);
-			System.out.print(kleuren[getal]);
-			System.out.println(waarden[getal2]);
 			Kaart kaart = new Kaart(kleuren[getal], waarden[getal2], kaartwaarden[getal2]);
+			kaart.toonKaart();
 		}
 		toonHand();
 		return true;
@@ -55,6 +51,11 @@ class Kaart{
 		kleur = kleurP;
 		this.waarde = waarde;
 		this.kaartwaarde = kaartwaarde;
+	}
+	void toonKaart() {
+		System.out.print("De kaart: " + kleur);
+		System.out.print(" - " + waarde);
+		System.out.println("(" + kaartwaarde+")");
 	}
 }
 
