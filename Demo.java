@@ -1,17 +1,23 @@
-
-
 class Demo {
 	public static void main(String... args){
-		int getallen[][] = new int[3][];
-		getallen[2] = new int[4];
-		getallen[2][2] = 7;
-		System.out.println(getallen [2][2]);
-		
-		int[] nummer = {3,4,5,6};
-		int[][][] cijfer[] = new int[5][][][];
-		for( int[][][] g : cijfer){
-			System.out.println(g);
-		}
-		
+		Boerderij b1 = new Boerderij();
+		System.out.println(b1.boer.voornaam);
+		b1.lopen(new Boer("ronald"));
+		System.out.println(b1.boer.voornaam);
+		System.out.println("einde");
 	}	
+}
+class Boerderij{
+	Boer boer = new Boer("joost");	
+	void lopen(Boer boer) {
+		System.out.println(boer.voornaam);
+		this.boer = boer;
+	}
+}
+class Boer{
+	String voornaam = "backupvoornaam";
+	Boer(String voornaam){ 
+		System.out.println(voornaam + "is geboren");
+		this.voornaam = voornaam;
+	}
 }
