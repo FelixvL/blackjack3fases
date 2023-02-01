@@ -2,17 +2,16 @@
 
 class Demo {
 	public static void main(String... args){
-		int getal = 18;
-		int tussen = getal < 16 ? 24 : 29;
-					//30
-		if (tussen > 30)//false
-			System.out.println("much");
-			System.out.println("little");
-			System.out.println("less");
-		if (tussen < 30)//true
-			System.out.println("hcum");
-			else
-				System.out.println("elttil");
-				System.out.println("ssel");
+		int getallen[][] = new int[3][];
+		getallen[2] = new int[4];
+		getallen[2][2] = 7;
+		System.out.println(getallen [2][2]);
+		
+		int[] nummer = {3,4,5,6};
+		int[][][] cijfer[] = new int[5][][][];
+		for( int[][][] g : cijfer){
+			System.out.println(g);
+		}
+		
 	}	
 }
