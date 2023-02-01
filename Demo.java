@@ -1,25 +1,29 @@
 class Demo {
-	public static void main(String... args){
-		Boerderij b1 = new Boerderij();
-		System.out.println(   b1.farmer.voornaam    );
-		Boer boer2 = new Boer("Karel");
-		b1.farmer = boer2;
-		System.out.println(   b1.farmer.voornaam    );
-		Boer farmereur3 = new Boer("Maria");
-		b1.andereBoerAannemen( new Boer("willem") );
-		System.out.println(   b1.farmer.voornaam    );
-		b1.andereBoerAannemen(farmereur3);
-	}	
+    public static void main(String... args) {
+        Dierenasiel da = new Dierenasiel();
+        Kat k1 = new Kat();
+        k1.soort = "rode kat";
+        da.katten[2] = new Kat().soort;
+        da.katten[0] = k1.soort;
+        da.katten[1] = new Kat("lelijke kat").soort;
+        da.katten[4] = new Kat().soort;
+        da.katten[5] = new Kat("munchkin").soort;
+//        
+        for( String k : da.katten) {
+                System.out.println(k);
+        }
+    }
 }
-class Boerderij{
-	Boer farmer = new Boer("joost");
-	void andereBoerAannemen(Boer bbb) {
-		this.farmer = bbb;
-	}
+class Kat {
+    String soort;
+    int aantalPoten;   
+    Kat() {
+        soort = "kitten";
+    }
+    Kat(String soort) {
+        this.soort = soort;
+    }
 }
-class Boer{
-	String voornaam = "frits";
-	Boer(String name){
-		voornaam = name;
-	}
+class Dierenasiel {
+    String[] katten = new String[5];
 }
